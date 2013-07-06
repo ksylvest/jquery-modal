@@ -99,7 +99,8 @@ pre .string.value {
     line-height: 20px;
     display: inline-block;
     text-align: center;
-    text-decoration: none; }
+    text-decoration: none;
+    border-radius: 4px; }
     .modal .social > *.tw {
       margin-left: 4px;
       color: white;
