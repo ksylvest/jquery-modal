@@ -1,7 +1,7 @@
 ###
 jQuery Modal
 Copyright 2013 Kevin Sylvestre
-v1.0.1
+1.0.2
 ###
 
 "use strict"
@@ -22,7 +22,7 @@ class Animation
 
   @execute: ($el, callback) ->
     transition = @transition($el)
-    if transition? then $el.one(transition, callback) else callback?()
+    if transition? then $el.one(transition, callback) else callback()
 
 class Modal
 
@@ -36,10 +36,14 @@ class Modal
   $: (selector) =>
     @$modal.find(selector)
 
-  constructor: ($el, settings = {}) ->
-    @$el = $el
-    @$vignette = $("<div class='vignette'></div>")
+  constructor: ($modal, settings = {}) ->
+    @$modal = $modal
+    @$vignette = $("<div class='vignette fade'></div>")
     $(document.body).append(@$vignette)
+
+  remove: =>
+    @$modal.remove()
+    @$vignette.remove()
 
   close: (event) =>
     event?.preventDefault()
@@ -53,37 +57,49 @@ class Modal
   toggle: (method = 'on') =>
     $(document)[method] "keyup", @keyup
     @$vignette[method] "click", @close
-    @$el[method] 'click', '[data-dismiss="modal"]', @close
-
-  setup: =>
-    @toggle('on')
-
-  clear: =>
-    @toggle('off')
+    @$modal[method] 'click', '[data-dismiss="modal"]', @close
 
   hide: =>
-    alpha = @clear
+    alpha = => @toggle('off')
     omega = =>
       @$vignette.hide()
-      @$el.hide()
+      @$modal.hide()
 
     alpha()
-    @$el.position()
-    @$el.addClass('fade')
-    Animation.execute(@$el, omega)
+    @hideModal(=> @hideVignette(omega))
 
   show: =>
-    omega = @setup
+    omega = => @toggle('on')
     alpha = => 
       @$vignette.show()
-      @$el.show()
+      @$modal.show()
 
     alpha()
+    @showVignette(=> @showModal(omega))
 
-    @$el.addClass('fade')
-    @$el.position()
-    @$el.removeClass('fade')
-    Animation.execute(@$el, omega)
+  showModal: (callback) =>
+    @$modal.addClass('fade')
+    @$modal.position()
+    @$modal.removeClass('fade')
+    Animation.execute(@$modal, callback) if callback?
+
+  hideModal: (callback) =>
+    @$modal.removeClass('fade')
+    @$modal.position()
+    @$modal.addClass('fade')
+    Animation.execute(@$modal, callback) if callback?
+
+  showVignette: (callback) =>
+    @$vignette.addClass('fade')
+    @$vignette.position()
+    @$vignette.removeClass('fade')
+    Animation.execute(@$vignette, callback) if callback?
+
+  hideVignette: (callback) =>
+    @$vignette.removeClass('fade')
+    @$vignette.position()
+    @$vignette.addClass('fade')
+    Animation.execute(@$vignette, callback) if callback?
 
 $.fn.extend
   modal: (option = {}) ->

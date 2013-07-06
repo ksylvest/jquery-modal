@@ -2,7 +2,7 @@
 /*
 jQuery Modal
 Copyright 2013 Kevin Sylvestre
-v1.0.1
+1.0.2
 */
 
 
@@ -42,7 +42,7 @@ v1.0.1
       if (transition != null) {
         return $el.one(transition, callback);
       } else {
-        return typeof callback === "function" ? callback() : void 0;
+        return callback();
       }
     };
 
@@ -68,22 +68,30 @@ v1.0.1
       return this.$modal.find(selector);
     };
 
-    function Modal($el, settings) {
+    function Modal($modal, settings) {
       if (settings == null) {
         settings = {};
       }
+      this.hideVignette = __bind(this.hideVignette, this);
+      this.showVignette = __bind(this.showVignette, this);
+      this.hideModal = __bind(this.hideModal, this);
+      this.showModal = __bind(this.showModal, this);
       this.show = __bind(this.show, this);
       this.hide = __bind(this.hide, this);
-      this.clear = __bind(this.clear, this);
-      this.setup = __bind(this.setup, this);
       this.toggle = __bind(this.toggle, this);
       this.keyup = __bind(this.keyup, this);
       this.close = __bind(this.close, this);
+      this.remove = __bind(this.remove, this);
       this.$ = __bind(this.$, this);
-      this.$el = $el;
-      this.$vignette = $("<div class='vignette'></div>");
+      this.$modal = $modal;
+      this.$vignette = $("<div class='vignette fade'></div>");
       $(document.body).append(this.$vignette);
     }
+
+    Modal.prototype.remove = function() {
+      this.$modal.remove();
+      return this.$vignette.remove();
+    };
 
     Modal.prototype.close = function(event) {
       if (event != null) {
@@ -110,44 +118,75 @@ v1.0.1
       }
       $(document)[method]("keyup", this.keyup);
       this.$vignette[method]("click", this.close);
-      return this.$el[method]('click', '[data-dismiss="modal"]', this.close);
-    };
-
-    Modal.prototype.setup = function() {
-      return this.toggle('on');
-    };
-
-    Modal.prototype.clear = function() {
-      return this.toggle('off');
+      return this.$modal[method]('click', '[data-dismiss="modal"]', this.close);
     };
 
     Modal.prototype.hide = function() {
       var alpha, omega,
         _this = this;
-      alpha = this.clear;
+      alpha = function() {
+        return _this.toggle('off');
+      };
       omega = function() {
         _this.$vignette.hide();
-        return _this.$el.hide();
+        return _this.$modal.hide();
       };
       alpha();
-      this.$el.position();
-      this.$el.addClass('fade');
-      return Animation.execute(this.$el, omega);
+      return this.hideModal(function() {
+        return _this.hideVignette(omega);
+      });
     };
 
     Modal.prototype.show = function() {
       var alpha, omega,
         _this = this;
-      omega = this.setup;
+      omega = function() {
+        return _this.toggle('on');
+      };
       alpha = function() {
         _this.$vignette.show();
-        return _this.$el.show();
+        return _this.$modal.show();
       };
       alpha();
-      this.$el.addClass('fade');
-      this.$el.position();
-      this.$el.removeClass('fade');
-      return Animation.execute(this.$el, omega);
+      return this.showVignette(function() {
+        return _this.showModal(omega);
+      });
+    };
+
+    Modal.prototype.showModal = function(callback) {
+      this.$modal.addClass('fade');
+      this.$modal.position();
+      this.$modal.removeClass('fade');
+      if (callback != null) {
+        return Animation.execute(this.$modal, callback);
+      }
+    };
+
+    Modal.prototype.hideModal = function(callback) {
+      this.$modal.removeClass('fade');
+      this.$modal.position();
+      this.$modal.addClass('fade');
+      if (callback != null) {
+        return Animation.execute(this.$modal, callback);
+      }
+    };
+
+    Modal.prototype.showVignette = function(callback) {
+      this.$vignette.addClass('fade');
+      this.$vignette.position();
+      this.$vignette.removeClass('fade');
+      if (callback != null) {
+        return Animation.execute(this.$vignette, callback);
+      }
+    };
+
+    Modal.prototype.hideVignette = function(callback) {
+      this.$vignette.removeClass('fade');
+      this.$vignette.position();
+      this.$vignette.addClass('fade');
+      if (callback != null) {
+        return Animation.execute(this.$vignette, callback);
+      }
     };
 
     return Modal;

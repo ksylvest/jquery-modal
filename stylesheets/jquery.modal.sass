@@ -1,7 +1,7 @@
 /*
  * jQuery Modal
  * Copyright 2013 Kevin Sylvestre
- * v1.0.1
+ * 1.0.2
  */
 
 @import bourbon/bourbon
@@ -13,11 +13,12 @@
 $black: #000
 $white: #FFF
 $border: #EEE
+$fast: 0.4s
 
 $namespace: "modal"
 
 .modal,.vignette
-  +transition(all 0.4s ease-in-out)
+  +transition(all $fast ease-in-out)
 
 .modal
   position: fixed
@@ -68,5 +69,6 @@ $namespace: "modal"
   height: 100%
   background: $black
   +opacity(80)
+
   &.fade
     +opacity(0)
