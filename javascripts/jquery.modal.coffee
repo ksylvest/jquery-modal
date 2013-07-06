@@ -1,7 +1,7 @@
 ###
 jQuery Modal
 Copyright 2013 Kevin Sylvestre
-1.0.2
+1.0.3
 ###
 
 "use strict"
