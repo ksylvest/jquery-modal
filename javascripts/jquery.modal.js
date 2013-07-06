@@ -2,6 +2,7 @@
 /*
 jQuery Modal
 Copyright 2013 Kevin Sylvestre
+v1.0.1
 */
 
 
