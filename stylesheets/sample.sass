@@ -72,6 +72,9 @@ pre
 
 .modal
 
+  *
+    +transition(all 0.2s ease-in-out)
+
   form
     margin: 0
 
@@ -83,7 +86,6 @@ pre
       display: block
       outline: none
       +appearance(none)
-      +transition(all 0.2s ease-in-out)
       border:
         radius: 4px
 
@@ -132,8 +134,6 @@ pre
     border: none
     border:
       radius: 4px
-
-    +transition(all 0.2s ease-in-out)
 
     &:hover
       background: darken(#88CC44, 8%)

@@ -14,8 +14,14 @@ To install copy the *javascripts* and *stylesheets* directories into your projec
 
 Setting up a modal is easy. The following snippet is a good start:
 
-    <div class="modal fade">...</div>
-    $('.modal').modal()
+    <div class="modal fade">
+      <div class="header">...</div>
+      <div class="content">...</div>
+      <div class="footer">...</div>
+    </div>
+    <script>
+      $('.modal').modal()
+    </script>
 
 ## Copyright
 
