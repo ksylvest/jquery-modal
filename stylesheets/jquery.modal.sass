@@ -1,7 +1,7 @@
 /*
  * jQuery Modal
  * Copyright 2013 Kevin Sylvestre
- * 1.0.3
+ * 1.0.4
  */
 
 @import bourbon/bourbon
@@ -9,6 +9,12 @@
 @mixin opacity($amount)
   opacity: $amount / 100
   filter: alpha(opacity = $amount)
+
+@mixin clears
+  &:before, &:after
+    content: " "
+    display: table
+    clear: both
 
 $black: #000
 $white: #FFF
@@ -37,8 +43,8 @@ $namespace: "modal"
     +opacity(0)
 
   .header, .footer, .body
-    clear: both
     padding: 10px
+    +clears
 
   .header * , .footer *
     margin: 0
@@ -57,7 +63,17 @@ $namespace: "modal"
       top: 1px solid $border
 
   .close
+    color: gray
+    float: right
+    display: block
     cursor: pointer
+    width: 20px
+    height: 20px
+    display: block
+    font-size: 20px
+    font-weight: bold
+    line-height: 20px
+    text-align: center
 
 .vignette
   position: fixed

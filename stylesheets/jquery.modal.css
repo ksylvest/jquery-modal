@@ -1,6 +1,6 @@
 /* jQuery Modal
  * Copyright 2013 Kevin Sylvestre
- * 1.0.3
+ * 1.0.4
  */
 .modal, .vignette {
   -webkit-transition: all 0.4s ease-in-out;
@@ -24,8 +24,11 @@
     opacity: 0;
     filter: alpha(opacity=0); }
   .modal .header, .modal .footer, .modal .body {
-    clear: both;
     padding: 10px; }
+    .modal .header:before, .modal .header:after, .modal .footer:before, .modal .footer:after, .modal .body:before, .modal .body:after {
+      content: " ";
+      display: table;
+      clear: both; }
   .modal .header *, .modal .footer * {
     margin: 0; }
   .modal .body {
@@ -37,7 +40,17 @@
   .modal .footer {
     border-top: 1px solid #eeeeee; }
   .modal .close {
-    cursor: pointer; }
+    color: gray;
+    float: right;
+    display: block;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: center; }
 
 .vignette {
   position: fixed;
