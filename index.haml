@@ -35,10 +35,10 @@
           %a.close{ data: { dismiss: 'modal' } } &times;
         .body
           .social
-            %a.fb{ rel: 'nofollow', href: '/auth/facebook' }
+            %a.fb{ rel: 'nofollow', href: '#' }
               %span Connect with
               %strong Facebook
-            %a.tw{ rel: 'nofollow', href: '/auth/twitter' }
+            %a.tw{ rel: 'nofollow', href: '#' }
               %span Connect with
               %strong Twitter
           %form
@@ -67,8 +67,12 @@
         %code{ data: { language: "html" } }
           = preserve do
             :escaped
-              <div class="modal fade">...</div>
+              <div class="modal fade">
+                <div class="header">...</div>
+                <div class="content">...</div>
+                <div class="footer">...</div>
+              </div>
               <script>
-                $('.modal').modal();
+                $('.modal').modal()
               </script>
       %p Copyright (c) 2010 - 2013 Kevin Sylvestre.
