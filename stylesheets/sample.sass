@@ -1,0 +1,143 @@
+@import bourbon/bourbon
+@import neat/neat
+
+h1, h2, h3, h4, h5, h6, .sans
+  color: #444
+  font-family: "Droid Sans", sans-serif
+  font-weight: normal
+
+p, textarea, input, .serif
+  color: #888
+  font-family: "Droid Serif", serif
+  font-weight: normal
+
+code
+  color: #888
+  font-family: "Consolas", "Monaco", monospace
+  font-weight: normal
+
+pre
+  overflow: scroll
+  background: #EEE
+  padding: 10px
+
+.content
+  width: 980px
+  margin: 80px auto
+
+.formats
+  .format
+    display: inline-block
+
+.zip
+  background: url('../images/zip.png')
+  display: block
+  width: 128px
+  height: 128px
+
+.tar
+  background: url('../images/tar.png')
+  display: block
+  width: 128px
+  height: 128px
+
+.fork
+  position: absolute
+  top: 0
+  left: 0
+  border: 0
+
+.try
+  display: block
+  padding: 20px
+  width: 200px
+  color: #FFF
+  background: #888
+  margin: 20px 0
+  text:
+    align: center
+    decoration: none
+  border:
+    radius: 4px
+
+pre
+  .support
+    &.tag
+      color: #008
+    &.attribute
+      color: #800
+  .string
+    &.value
+      color: #080
+
+.modal
+
+  form
+    margin: 0
+
+    #{$all-text-inputs}
+      width: 100%
+      height: 48px
+      padding: 12px 14px
+      margin: 0 0 8px
+      display: block
+      outline: none
+      +appearance(none)
+      +transition(all 0.2s ease-in-out)
+      border:
+        radius: 4px
+
+      border: 1px solid rgba(#CCCCCC, 0.8)
+      box-shadow: inset 0 1px 2px rgba(#444444, 0.2)
+
+      &:focus
+        border: 1px solid rgba(#55AAEE, 0.8)
+        box-shadow: inset 0 1px 2px rgba(#444444, 0.2), 0 0 8px rgba(#55AAEE, 0.8)
+
+  .social
+    margin: 0 0 8px
+    > *
+      width: 294px
+      height: 60px
+      padding: 20px
+      line-height: 20px
+      display: inline-block
+      text-align: center
+      text-decoration: none
+
+      &.tw
+        margin:
+          left: 4px
+        color: #FFF
+        background: #22BBFF
+        &:hover
+          background: darken(#22BBFF, 8%)
+        &:active
+          background: lighten(#22BBFF, 8%)
+
+      &.fb
+        margin:
+          right: 4px
+        color: #FFF
+        background: #5577BB
+        &:hover
+          background: darken(#5577BB, 8%)
+        &:active
+          background: lighten(#5577BB, 8%)
+
+  .submit
+    color: #FFFFFF
+    background: #88CC44
+    padding: 10px 20px
+    border: none
+    border:
+      radius: 4px
+
+    +transition(all 0.2s ease-in-out)
+
+    &:hover
+      background: darken(#88CC44, 8%)
+      text-decoration: none
+    &:active
+      background: lighten(#88CC44, 8%)
+      text-decoration: none

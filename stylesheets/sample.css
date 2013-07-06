@@ -1,0 +1,132 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5, h6, .sans {
+  color: #444444;
+  font-family: "Droid Sans", sans-serif;
+  font-weight: normal; }
+
+p, textarea, input, .serif {
+  color: #888888;
+  font-family: "Droid Serif", serif;
+  font-weight: normal; }
+
+code {
+  color: #888888;
+  font-family: "Consolas", "Monaco", monospace;
+  font-weight: normal; }
+
+pre {
+  overflow: scroll;
+  background: #eeeeee;
+  padding: 10px; }
+
+.content {
+  width: 980px;
+  margin: 80px auto; }
+
+.formats .format {
+  display: inline-block; }
+
+.zip {
+  background: url("../images/zip.png");
+  display: block;
+  width: 128px;
+  height: 128px; }
+
+.tar {
+  background: url("../images/tar.png");
+  display: block;
+  width: 128px;
+  height: 128px; }
+
+.fork {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0; }
+
+.try {
+  display: block;
+  padding: 20px;
+  width: 200px;
+  color: white;
+  background: #888888;
+  margin: 20px 0;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px; }
+
+pre .support.tag {
+  color: #000088; }
+pre .support.attribute {
+  color: #880000; }
+pre .string.value {
+  color: #008800; }
+
+.modal form {
+  margin: 0; }
+  .modal form input[type="email"], .modal form input[type="number"], .modal form input[type="password"], .modal form input[type="search"], .modal form input[type="tel"], .modal form input[type="text"], .modal form input[type="url"], .modal form input[type="color"], .modal form input[type="date"], .modal form input[type="datetime"], .modal form input[type="datetime-local"], .modal form input[type="month"], .modal form input[type="time"], .modal form input[type="week"] {
+    width: 100%;
+    height: 48px;
+    padding: 12px 14px;
+    margin: 0 0 8px;
+    display: block;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    border-radius: 4px;
+    border: 1px solid rgba(204, 204, 204, 0.8);
+    box-shadow: inset 0 1px 2px rgba(68, 68, 68, 0.2); }
+    .modal form input[type="email"]:focus, .modal form input[type="number"]:focus, .modal form input[type="password"]:focus, .modal form input[type="search"]:focus, .modal form input[type="tel"]:focus, .modal form input[type="text"]:focus, .modal form input[type="url"]:focus, .modal form input[type="color"]:focus, .modal form input[type="date"]:focus, .modal form input[type="datetime"]:focus, .modal form input[type="datetime-local"]:focus, .modal form input[type="month"]:focus, .modal form input[type="time"]:focus, .modal form input[type="week"]:focus {
+      border: 1px solid rgba(85, 170, 238, 0.8);
+      box-shadow: inset 0 1px 2px rgba(68, 68, 68, 0.2), 0 0 8px rgba(85, 170, 238, 0.8); }
+.modal .social {
+  margin: 0 0 8px; }
+  .modal .social > * {
+    width: 294px;
+    height: 60px;
+    padding: 20px;
+    line-height: 20px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none; }
+    .modal .social > *.tw {
+      margin-left: 4px;
+      color: white;
+      background: #22bbff; }
+      .modal .social > *.tw:hover {
+        background: #00acf8; }
+      .modal .social > *.tw:active {
+        background: #4bc8ff; }
+    .modal .social > *.fb {
+      margin-right: 4px;
+      color: white;
+      background: #5577bb; }
+      .modal .social > *.fb:hover {
+        background: #4263a5; }
+      .modal .social > *.fb:active {
+        background: #728ec7; }
+.modal .submit {
+  color: white;
+  background: #88cc44;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+  .modal .submit:hover {
+    background: #74b632;
+    text-decoration: none; }
+  .modal .submit:active {
+    background: #9cd564;
+    text-decoration: none; }

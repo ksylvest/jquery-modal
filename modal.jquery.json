@@ -1,0 +1,30 @@
+{
+  "name": "modal",
+  "title": "jQuery Modal",
+  "description": "Modal is a jQuery plugin created to overlays.",
+  "keywords": 
+  [
+    "carousel",
+    "animation"
+  ],
+  "version": "1.0.0",
+  "author": {
+    "name": "Kevin Sylvestre",
+    "url": "https://ksylvest.com/"
+  },
+  "licenses": 
+  [
+    {
+      "type": "MIT",
+      "url": "https://github.com/ksylvest/jquery-modal/LICENSE"
+    }
+  ],
+  "bugs": "https://github.com/ksylvest/jquery-modal/issues",
+  "docs": "https://ksylvest.github.com/jquery-modal",
+  "homepage": "https://ksylvest.github.com/jquery-modal",
+  "download": "https://ksylvest.github.com/jquery-modal",
+  "dependencies": 
+  {
+    "jquery": ">1.5"
+  }
+}
