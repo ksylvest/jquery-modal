@@ -10,6 +10,11 @@ To install copy the *javascripts* and *stylesheets* directories into your projec
     <script src="javascripts/jquery.modal.js" type="text/javascript"></script>
     <link href="stylesheets/jquery.modal.css" rel="stylesheet" type="text/css" />
 
+This plugin is also registered under http://bower.io/ to simplify integration. Try:
+
+    npm install -g bower
+    bower install modal
+
 ## Examples
 
 Setting up a modal is easy. The following snippet is a good start:

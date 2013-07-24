@@ -2,7 +2,7 @@
 /*
 jQuery Modal
 Copyright 2013 Kevin Sylvestre
-1.0.4
+1.0.5
 */
 
 
@@ -132,9 +132,8 @@ Copyright 2013 Kevin Sylvestre
         return _this.$modal.hide();
       };
       alpha();
-      return this.hideModal(function() {
-        return _this.hideVignette(omega);
-      });
+      this.hideVignette();
+      return this.hideModal(omega);
     };
 
     Modal.prototype.show = function() {
@@ -148,9 +147,8 @@ Copyright 2013 Kevin Sylvestre
         return _this.$modal.show();
       };
       alpha();
-      return this.showVignette(function() {
-        return _this.showModal(omega);
-      });
+      this.showVignette();
+      return this.showModal(omega);
     };
 
     Modal.prototype.showModal = function(callback) {

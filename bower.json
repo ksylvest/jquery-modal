@@ -1,0 +1,21 @@
+{
+  "name": "modal",
+  "version": "1.0.5",
+  "main": [ "./javascripts/jquery.modal.js","./stylesheets/jquery.modal.css" ],
+  "ignore": 
+  [
+    "**/*.sass",
+    "**/*.coffee",
+    "**/sample.*",
+    "**/rainbow.*",
+    "bourbon",
+    "neat",
+    "packages",
+    "images",
+    "Cakefile",
+    "Gemfile",
+    "Gemfile.*",
+    "index.*"
+  ],
+  "dependencies": { "jquery": "latest" }
+}
