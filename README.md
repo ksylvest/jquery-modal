@@ -28,6 +28,10 @@ Setting up a modal is easy. The following snippet is a good start:
       $('.modal').modal()
     </script>
 
+## Status
+
+[![Status](https://travis-ci.org/ksylvest/jquery-modal.png)](https://travis-ci.org/ksylvest/jquery-modal)
+
 ## Copyright
 
 Copyright (c) 2010 - 2013 Kevin Sylvestre. See LICENSE for details.
