@@ -1,7 +1,7 @@
 ###
 jQuery Modal
 Copyright 2013 Kevin Sylvestre
-1.0.6
+1.0.7
 ###
 
 "use strict"
@@ -12,7 +12,6 @@ class Animation
   @transitions:
     "webkitTransition": "webkitTransitionEnd"
     "mozTransition": "mozTransitionEnd"
-    "msTransition": "msTransitionEnd"
     "oTransition": "oTransitionEnd"
     "transition": "transitionend"
 
