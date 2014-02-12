@@ -1,14 +1,14 @@
 /*
  * jQuery Modal
  * Copyright 2013 Kevin Sylvestre
- * 1.0.8
+ * 1.0.9
  */
 
 @import bourbon/bourbon
 
 @mixin opacity($amount)
-  opacity: $amount / 100
-  filter: alpha(opacity = $amount)
+  opacity: $amount
+  filter: alpha(opacity = $amount * 100)
 
 @mixin clears
   &:before, &:after
@@ -19,7 +19,7 @@
 $black: #000
 $white: #FFF
 $border: #EEE
-$fast: 0.4s
+$fast: 0.2s
 
 $namespace: "modal"
 
@@ -35,12 +35,14 @@ $namespace: "modal"
   width: 620px
   margin: 0 -320px
   z-index: 4000
-  +opacity(100)
   box-shadow: 0 2px 8px $black
 
+  +opacity(1.0)
+  +transform(scale(1.0))
+
   &.fade
-    top: -20%
-    +opacity(0)
+    +opacity(0.0)
+    +transform(scale(0.8))
 
   .header, .footer, .body
     padding: 10px
@@ -85,7 +87,7 @@ $namespace: "modal"
   height: 100%
   background: $black
   z-index: 2000
-  +opacity(80)
+  +opacity(0.8)
 
   &.fade
-    +opacity(0)
+    +opacity(0.0)
