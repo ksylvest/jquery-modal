@@ -2,7 +2,7 @@
 /*
 jQuery Modal
 Copyright 2013 Kevin Sylvestre
-1.0.9
+1.1.0
 */
 
 
@@ -84,7 +84,6 @@ Copyright 2013 Kevin Sylvestre
       this.$ = __bind(this.$, this);
       this.$modal = $modal;
       this.$vignette = $("<div class='vignette fade'></div>");
-      $(document.body).append(this.$vignette);
     }
 
     Modal.prototype.remove = function() {
@@ -127,7 +126,7 @@ Copyright 2013 Kevin Sylvestre
         return _this.toggle('off');
       };
       omega = function() {
-        _this.$vignette.hide();
+        _this.$vignette.remove();
         return _this.$modal.hide();
       };
       alpha();
@@ -142,7 +141,7 @@ Copyright 2013 Kevin Sylvestre
         return _this.toggle('on');
       };
       alpha = function() {
-        _this.$vignette.show();
+        $(document.body).append(_this.$vignette);
         return _this.$modal.show();
       };
       alpha();

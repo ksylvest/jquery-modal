@@ -1,7 +1,7 @@
 ###
 jQuery Modal
 Copyright 2013 Kevin Sylvestre
-1.0.9
+1.1.0
 ###
 
 "use strict"
@@ -38,7 +38,6 @@ class Modal
   constructor: ($modal, settings = {}) ->
     @$modal = $modal
     @$vignette = $("<div class='vignette fade'></div>")
-    $(document.body).append(@$vignette)
 
   remove: =>
     @$modal.remove()
@@ -61,7 +60,7 @@ class Modal
   hide: =>
     alpha = => @toggle('off')
     omega = =>
-      @$vignette.hide()
+      @$vignette.remove()
       @$modal.hide()
 
     alpha()
@@ -71,7 +70,7 @@ class Modal
   show: =>
     omega = => @toggle('on')
     alpha = => 
-      @$vignette.show()
+      $(document.body).append(@$vignette)
       @$modal.show()
 
     alpha()
