@@ -1,7 +1,7 @@
 ###
 jQuery Modal
 Copyright 2013 Kevin Sylvestre
-1.1.1
+1.1.2
 ###
 
 "use strict"
@@ -66,6 +66,7 @@ class Modal
   hide: =>
     alpha = => @toggle('off')
     omega = =>
+      @$modal.trigger('hidden')
       @$vignette.remove()
       @$modal.hide()
 
@@ -76,6 +77,7 @@ class Modal
   show: =>
     omega = => @toggle('on')
     alpha = => 
+      @$modal.trigger('shown')
       $(document.body).append(@$vignette)
       @$modal.show()
 
