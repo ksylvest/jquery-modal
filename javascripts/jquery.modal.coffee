@@ -1,7 +1,7 @@
 ###
 jQuery Modal
-Copyright 2013 Kevin Sylvestre
-1.1.3
+Copyright 2014 Kevin Sylvestre
+1.1.4
 ###
 
 "use strict"
@@ -43,6 +43,7 @@ class Modal
 
   constructor: ($modal, settings = {}) ->
     @$modal = $modal
+    @settings = settings
     @$vignette = $("<div class='vignette fade'></div>")
 
   remove: =>
@@ -58,13 +59,14 @@ class Modal
     return if event.target.form?
     @close() if event.which is 27 # esc
 
-  toggle: (method = 'on') =>
-    $(document)[method] 'keyup', @keyup
-    @$vignette[method] 'click', @close
-    @$modal[method] 'click', '[data-dismiss="modal"]', @close
+  observe: (method = 'on') =>
+    unless @settings.static
+      $(document)[method] 'keyup', @keyup
+      @$vignette[method] 'click', @close
+      @$modal[method] 'click', '[data-dismiss="modal"]', @close
 
   hide: =>
-    alpha = => @toggle('off')
+    alpha = => @observe('off')
     omega = =>
       @$modal.trigger('hidden')
       @$vignette.remove()
@@ -75,7 +77,7 @@ class Modal
     @modal('hide', omega)
 
   show: =>
-    omega = => @toggle('on')
+    omega = => @observe('on')
     alpha = => 
       @$modal.trigger('shown')
       $(document.body).append(@$vignette)
