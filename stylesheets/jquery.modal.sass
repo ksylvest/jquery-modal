@@ -1,10 +1,16 @@
 /*
  * jQuery Modal
- * Copyright 2013 Kevin Sylvestre
- * 1.1.4
+ * Copyright 2014 Kevin Sylvestre
+ * 1.1.5
  */
 
 @import bourbon/bourbon
+
+$fast: 0.2s
+$black: #000
+$white: #FFF
+$border: #EEE
+$zindex: 4000
 
 @mixin opacity($amount)
   opacity: $amount
@@ -16,15 +22,37 @@
     display: table
     clear: both
 
-$black: #000
-$white: #FFF
-$border: #EEE
-$fast: 0.2s
+@mixin unscrollable
+  @each $prefix in "webkit", "moz", "ms"
+    -#{$prefix}-overflow-style: none
+    &::-#{$prefix}-scrollbar
+      display: none !important
+      width: 0 !important
 
-$namespace: "modal"
-
-.modal,.vignette
+.modal,.vignette,.scroller
   +transition(all $fast ease-in-out)
+
+.modaled
+  overflow: hidden
+  +unscrollable
+
+.scroller
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  overflow:
+    x: hidden
+    y: auto
+  z-index: $zindex
+
+  .modal
+    position: relative
+    top: inherit
+    left: inherit
+    right: inherit
+    margin: 40px auto
 
 .modal
   position: fixed
@@ -34,7 +62,7 @@ $namespace: "modal"
   right: 50%
   width: 620px
   margin: 0 -320px
-  z-index: 4000
+  z-index: $zindex
   box-shadow: 0 2px 8px $black
 
   +opacity(1.0)

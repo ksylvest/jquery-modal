@@ -1,11 +1,42 @@
 /* jQuery Modal
- * Copyright 2013 Kevin Sylvestre
- * 1.1.4
+ * Copyright 2014 Kevin Sylvestre
+ * 1.1.5
  */
-.modal, .vignette {
+.modal, .vignette, .scroller {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; }
+
+.modaled {
+  overflow: hidden;
+  -webkit-overflow-style: none;
+  -moz-overflow-style: none;
+  -ms-overflow-style: none; }
+  .modaled::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important; }
+  .modaled::-moz-scrollbar {
+    display: none !important;
+    width: 0 !important; }
+  .modaled::-ms-scrollbar {
+    display: none !important;
+    width: 0 !important; }
+
+.scroller {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 4000; }
+  .scroller .modal {
+    position: relative;
+    top: inherit;
+    left: inherit;
+    right: inherit;
+    margin: 40px auto; }
 
 .modal {
   position: fixed;

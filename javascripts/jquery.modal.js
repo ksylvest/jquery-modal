@@ -2,7 +2,7 @@
 /*
 jQuery Modal
 Copyright 2014 Kevin Sylvestre
-1.1.4
+1.1.5
 */
 
 
@@ -56,6 +56,14 @@ Copyright 2014 Kevin Sylvestre
       if (klass == null) {
         klass = 'fade';
       }
+      return $el.removeClass(klass);
+    };
+
+    Animation.enable = function($el, klass) {
+      return $el.addClass(klass);
+    };
+
+    Animation.disable = function($el, klass) {
       return $el.removeClass(klass);
     };
 
@@ -128,6 +136,7 @@ Copyright 2014 Kevin Sylvestre
       if (!this.settings["static"]) {
         $(document)[method]('keyup', this.keyup);
         this.$vignette[method]('click', this.close);
+        this.$modal.parent('.scroller')[method]('click', this.close);
         return this.$modal[method]('click', '[data-dismiss="modal"]', this.close);
       }
     };
@@ -139,6 +148,10 @@ Copyright 2014 Kevin Sylvestre
         return _this.observe('off');
       };
       omega = function() {
+        Animation.disable($(document.body), 'modaled');
+        if (_this.$modal.parent('.scroller').length) {
+          _this.$modal.unwrap();
+        }
         _this.$modal.trigger('hidden');
         _this.$vignette.remove();
         return _this.$modal.hide();
@@ -155,6 +168,10 @@ Copyright 2014 Kevin Sylvestre
         return _this.observe('on');
       };
       alpha = function() {
+        Animation.enable($(document.body), 'modaled');
+        if (!_this.$modal.parent('.scroller').length) {
+          _this.$modal.wrap("<div class='scroller'></div>");
+        }
         _this.$modal.trigger('shown');
         $(document.body).append(_this.$vignette);
         return _this.$modal.show();

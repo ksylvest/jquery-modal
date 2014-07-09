@@ -1,7 +1,7 @@
 ###
 jQuery Modal
 Copyright 2014 Kevin Sylvestre
-1.1.4
+1.1.5
 ###
 
 "use strict"
@@ -26,7 +26,13 @@ class Animation
   @hide: ($el, klass = 'fade') ->
     $el.addClass(klass)
 
-  @show: ($el, klass = 'fade')->
+  @show: ($el, klass = 'fade') ->
+    $el.removeClass(klass)
+
+  @enable: ($el, klass) ->
+    $el.addClass(klass)
+
+  @disable: ($el, klass) ->
     $el.removeClass(klass)
 
 class Modal
@@ -63,11 +69,14 @@ class Modal
     unless @settings.static
       $(document)[method] 'keyup', @keyup
       @$vignette[method] 'click', @close
+      @$modal.parent('.scroller')[method] 'click', @close
       @$modal[method] 'click', '[data-dismiss="modal"]', @close
 
   hide: =>
     alpha = => @observe('off')
     omega = =>
+      Animation.disable($(document.body), 'modaled')
+      @$modal.unwrap() if @$modal.parent('.scroller').length
       @$modal.trigger('hidden')
       @$vignette.remove()
       @$modal.hide()
@@ -79,6 +88,8 @@ class Modal
   show: =>
     omega = => @observe('on')
     alpha = => 
+      Animation.enable($(document.body), 'modaled')
+      @$modal.wrap("<div class='scroller'></div>") unless @$modal.parent('.scroller').length
       @$modal.trigger('shown')
       $(document.body).append(@$vignette)
       @$modal.show()
