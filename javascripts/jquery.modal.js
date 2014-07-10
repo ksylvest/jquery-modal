@@ -2,7 +2,7 @@
 /*
 jQuery Modal
 Copyright 2014 Kevin Sylvestre
-1.1.7
+1.1.8
 */
 
 
@@ -130,18 +130,18 @@ Copyright 2014 Kevin Sylvestre
     };
 
     Modal.prototype.observe = function(method) {
-      var scroller, that;
+      var modaler, that;
       if (method == null) {
         method = 'on';
       }
       if (!this.settings["static"]) {
         that = this;
-        scroller = function(event) {
+        modaler = function(event) {
           if (event.target === this) {
             return that.close(event);
           }
         };
-        this.$modal.parent('.scroller')[method]('click', scroller);
+        this.$modal.parent('.modaler')[method]('click', modaler);
         $(document)[method]('keyup', this.keyup);
         this.$vignette[method]('click', this.close);
         return this.$modal[method]('click', '[data-dismiss="modal"]', this.close);
@@ -156,7 +156,7 @@ Copyright 2014 Kevin Sylvestre
       };
       omega = function() {
         Animation.disable($(document.body), 'modaled');
-        if (_this.$modal.parent('.scroller').length) {
+        if (_this.$modal.parent('.modaler').length) {
           _this.$modal.unwrap();
         }
         _this.$modal.trigger('hidden');
@@ -176,8 +176,8 @@ Copyright 2014 Kevin Sylvestre
       };
       alpha = function() {
         Animation.enable($(document.body), 'modaled');
-        if (!_this.$modal.parent('.scroller').length) {
-          _this.$modal.wrap("<div class='scroller'></div>");
+        if (!_this.$modal.parent('.modaler').length) {
+          _this.$modal.wrap("<div class='modaler'></div>");
         }
         _this.$modal.trigger('shown');
         $(document.body).append(_this.$vignette);

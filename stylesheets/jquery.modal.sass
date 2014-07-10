@@ -1,7 +1,7 @@
 /*
  * jQuery Modal
  * Copyright 2014 Kevin Sylvestre
- * 1.1.7
+ * 1.1.8
  */
 
 @import bourbon/bourbon
@@ -28,14 +28,14 @@ $border: #EEE
       display: none !important
       width: 0 !important
 
-.modal,.vignette,.scroller
+.modal,.vignette,.modaler
   +transition(all $fast ease-in-out)
 
 .modaled
   overflow: hidden
   +unscrollable
 
-.scroller
+.modaler
   position: fixed
   top: 0
   left: 0

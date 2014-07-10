@@ -1,8 +1,8 @@
 /* jQuery Modal
  * Copyright 2014 Kevin Sylvestre
- * 1.1.7
+ * 1.1.8
  */
-.modal, .vignette, .scroller {
+.modal, .vignette, .modaler {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; }
@@ -22,7 +22,7 @@
     display: none !important;
     width: 0 !important; }
 
-.scroller {
+.modaler {
   position: fixed;
   top: 0;
   left: 0;
@@ -31,7 +31,7 @@
   overflow-x: hidden;
   overflow-y: auto;
   z-index: 4000; }
-  .scroller .modal {
+  .modaler .modal {
     position: relative;
     top: inherit;
     left: inherit;
