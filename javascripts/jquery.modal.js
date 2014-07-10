@@ -130,13 +130,20 @@ Copyright 2014 Kevin Sylvestre
     };
 
     Modal.prototype.observe = function(method) {
+      var scroller, that;
       if (method == null) {
         method = 'on';
       }
       if (!this.settings["static"]) {
+        that = this;
+        scroller = function(event) {
+          if (event.target === this) {
+            return that.close(event);
+          }
+        };
+        this.$modal.parent('.scroller')[method]('click', scroller);
         $(document)[method]('keyup', this.keyup);
         this.$vignette[method]('click', this.close);
-        this.$modal.parent('.scroller')[method]('click', this.close);
         return this.$modal[method]('click', '[data-dismiss="modal"]', this.close);
       }
     };

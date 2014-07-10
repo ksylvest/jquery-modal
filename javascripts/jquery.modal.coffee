@@ -67,9 +67,12 @@ class Modal
 
   observe: (method = 'on') =>
     unless @settings.static
+      that = @
+      scroller = (event) -> that.close(event) if event.target is @
+      @$modal.parent('.scroller')[method] 'click', scroller
+
       $(document)[method] 'keyup', @keyup
       @$vignette[method] 'click', @close
-      @$modal.parent('.scroller')[method] 'click', @close
       @$modal[method] 'click', '[data-dismiss="modal"]', @close
 
   hide: =>

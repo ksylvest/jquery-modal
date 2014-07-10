@@ -1,7 +1,7 @@
 /*
  * jQuery Modal
  * Copyright 2014 Kevin Sylvestre
- * 1.1.5
+ * 1.1.6
  */
 
 @import bourbon/bourbon
@@ -10,7 +10,6 @@ $fast: 0.2s
 $black: #000
 $white: #FFF
 $border: #EEE
-$zindex: 4000
 
 @mixin opacity($amount)
   opacity: $amount
@@ -45,7 +44,7 @@ $zindex: 4000
   overflow:
     x: hidden
     y: auto
-  z-index: $zindex
+  z-index: 4000
 
   .modal
     position: relative
@@ -62,7 +61,7 @@ $zindex: 4000
   right: 50%
   width: 620px
   margin: 0 -320px
-  z-index: $zindex
+  z-index: 4000
   box-shadow: 0 2px 8px $black
 
   +opacity(1.0)
