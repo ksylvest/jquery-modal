@@ -1,7 +1,8 @@
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+html {
   box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
 
 body, html, p, h1, h2, h3, h4, h5, h6 {
   font-family: "Lato", "Helvetica", serif;
@@ -12,14 +13,14 @@ code {
   font-weight: normal; }
 
 body, html, p, code {
-  color: #888888; }
+  color: #888; }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #444444; }
+  color: #444; }
 
 pre {
   overflow: scroll;
-  background: #eeeeee;
+  background: #EEE;
   padding: 10px; }
 
 .content {
@@ -51,19 +52,19 @@ pre {
   display: block;
   padding: 20px;
   width: 200px;
-  color: white;
-  background: #888888;
+  color: #FFF;
+  background: #888;
   margin: 20px 0;
   text-align: center;
   text-decoration: none;
   border-radius: 4px; }
 
 pre .support.tag {
-  color: #000088; }
+  color: #008; }
 pre .support.attribute {
-  color: #880000; }
+  color: #800; }
 pre .string.value {
-  color: #008800; }
+  color: #080; }
 
 .modal * {
   -webkit-transition: all 0.2s ease-in-out;
@@ -71,7 +72,7 @@ pre .string.value {
   transition: all 0.2s ease-in-out; }
 .modal form {
   margin: 0; }
-  .modal form input[type="email"], .modal form input[type="number"], .modal form input[type="password"], .modal form input[type="search"], .modal form input[type="tel"], .modal form input[type="text"], .modal form input[type="url"], .modal form input[type="color"], .modal form input[type="date"], .modal form input[type="datetime"], .modal form input[type="datetime-local"], .modal form input[type="month"], .modal form input[type="time"], .modal form input[type="week"] {
+  .modal form input[type="color"], .modal form input[type="date"], .modal form input[type="datetime"], .modal form input[type="datetime-local"], .modal form input[type="email"], .modal form input[type="month"], .modal form input[type="number"], .modal form input[type="password"], .modal form input[type="search"], .modal form input[type="tel"], .modal form input[type="text"], .modal form input[type="time"], .modal form input[type="url"], .modal form input[type="week"], .modal form textarea {
     width: 100%;
     height: 48px;
     padding: 12px 14px;
@@ -86,7 +87,7 @@ pre .string.value {
     border-radius: 4px;
     border: 1px solid rgba(204, 204, 204, 0.8);
     box-shadow: inset 0 1px 2px rgba(68, 68, 68, 0.2); }
-    .modal form input[type="email"]:focus, .modal form input[type="number"]:focus, .modal form input[type="password"]:focus, .modal form input[type="search"]:focus, .modal form input[type="tel"]:focus, .modal form input[type="text"]:focus, .modal form input[type="url"]:focus, .modal form input[type="color"]:focus, .modal form input[type="date"]:focus, .modal form input[type="datetime"]:focus, .modal form input[type="datetime-local"]:focus, .modal form input[type="month"]:focus, .modal form input[type="time"]:focus, .modal form input[type="week"]:focus {
+    .modal form input[type="color"]:focus, .modal form input[type="date"]:focus, .modal form input[type="datetime"]:focus, .modal form input[type="datetime-local"]:focus, .modal form input[type="email"]:focus, .modal form input[type="month"]:focus, .modal form input[type="number"]:focus, .modal form input[type="password"]:focus, .modal form input[type="search"]:focus, .modal form input[type="tel"]:focus, .modal form input[type="text"]:focus, .modal form input[type="time"]:focus, .modal form input[type="url"]:focus, .modal form input[type="week"]:focus, .modal form textarea:focus {
       border: 1px solid rgba(85, 170, 238, 0.8);
       box-shadow: inset 0 1px 2px rgba(68, 68, 68, 0.2), 0 0 8px rgba(85, 170, 238, 0.8); }
 .modal .social {
@@ -102,23 +103,23 @@ pre .string.value {
     border-radius: 4px; }
     .modal .social > *.tw {
       margin-left: 4px;
-      color: white;
-      background: #22bbff; }
+      color: #FFF;
+      background: #22BBFF; }
       .modal .social > *.tw:hover {
         background: #00acf8; }
       .modal .social > *.tw:active {
         background: #4bc8ff; }
     .modal .social > *.fb {
       margin-right: 4px;
-      color: white;
-      background: #5577bb; }
+      color: #FFF;
+      background: #5577BB; }
       .modal .social > *.fb:hover {
         background: #4263a5; }
       .modal .social > *.fb:active {
         background: #728ec7; }
 .modal .submit {
-  color: white;
-  background: #88cc44;
+  color: #FFFFFF;
+  background: #88CC44;
   padding: 10px 20px;
   border: none;
   border-radius: 4px; }
@@ -128,3 +129,5 @@ pre .string.value {
   .modal .submit:active {
     background: #9cd564;
     text-decoration: none; }
+
+/*# sourceMappingURL=sample.css.map */

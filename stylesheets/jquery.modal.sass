@@ -1,15 +1,16 @@
 /*
  * jQuery Modal
  * Copyright 2014 Kevin Sylvestre
- * 1.1.8
+ * 1.1.9
  */
 
-@import bourbon/bourbon
+@import ../bourbon/bourbon
 
 $fast: 0.2s
 $black: #000
 $white: #FFF
 $border: #EEE
+$namespace: "modal"
 
 @mixin opacity($amount)
   opacity: $amount
@@ -53,7 +54,7 @@ $border: #EEE
     right: inherit
     margin: 40px auto
 
-.modal
+.#{$namespace}
   position: fixed
   background: $white
   top: 20%
@@ -71,23 +72,23 @@ $border: #EEE
     +opacity(0.0)
     +transform(scale(0.8))
 
-  .header, .footer, .body
+  .#{$namespace}-header, .#{$namespace}-footer, .#{$namespace}-body, .header, .footer, .body
     padding: 10px
     +clears
 
-  .header * , .footer *
+  .#{$namespace}-header *, .#{$namespace}-footer *, .header * , .footer *, 
     margin: 0
 
-  .body
+  .#{$namespace}-body, .body
     min-height: 240px
     max-height: 480px
     overflow: auto
 
-  .header
+  .#{$namespace}-header, .header
     border:
       bottom: 1px solid $border
 
-  .footer
+  .#{$namespace}-footer, .footer
     border:
       top: 1px solid $border
 
