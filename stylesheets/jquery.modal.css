@@ -2,11 +2,6 @@
  * Copyright 2014 Kevin Sylvestre
  * 1.1.9
  */
-.modal, .vignette, .modaler {
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out; }
-
 .modaled {
   overflow: hidden;
   -webkit-overflow-style: none;
@@ -48,6 +43,12 @@
   margin: 0 -320px;
   z-index: 4000;
   box-shadow: 0 2px 8px #000;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition-property: -webkit-transform, opacity, filter;
+  -moz-transition-property: -moz-transform, opacity, filter;
+  transition-property: transform, opacity, filter;
   opacity: 1;
   filter: alpha(opacity=100);
   -webkit-transform: scale(1);
@@ -103,7 +104,13 @@
   background: #000;
   z-index: 2000;
   opacity: 0.8;
-  filter: alpha(opacity=80); }
+  filter: alpha(opacity=80);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition-property: -webkit-transform, opacity, filter;
+  -moz-transition-property: -moz-transform, opacity, filter;
+  transition-property: transform, opacity, filter; }
   .vignette.fade {
     opacity: 0;
     filter: alpha(opacity=0); }
