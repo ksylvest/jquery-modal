@@ -1,0 +1,16 @@
+{
+  "name": "jquery.modal",
+  "version": "1.1.9",
+  "description": "Modal is a jQuery plugin for providing content overlays (logins, signups, etc).",
+  "main": "./javascripts/jquery.modal.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksylvest/jquery-modal.git"
+  },
+  "author": "Kevin Sylvestre",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ksylvest/jquery-modal/issues"
+  },
+  "homepage": "https://github.com/ksylvest/jquery-modal#readme"
+}

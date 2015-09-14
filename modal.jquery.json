@@ -1,8 +1,8 @@
 {
   "name": "modal",
   "title": "jQuery Modal",
-  "description": "Modal is a jQuery plugin created to overlays.",
-  "keywords": 
+  "description": "Modal is a jQuery plugin for providing content overlays (logins, signups, etc).",
+  "keywords":
   [
     "carousel",
     "animation"
@@ -13,7 +13,7 @@
     "email": "kevin@ksylvest.com",
     "url": "http://ksylvest.com/"
   },
-  "licenses": 
+  "licenses":
   [
     {
       "type": "MIT",
@@ -24,7 +24,7 @@
   "docs": "https://ksylvest.github.com/jquery-modal",
   "homepage": "https://ksylvest.github.com/jquery-modal",
   "download": "https://ksylvest.github.com/jquery-modal",
-  "dependencies": 
+  "dependencies":
   {
     "jquery": ">1.5"
   }
